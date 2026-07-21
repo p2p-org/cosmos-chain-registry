@@ -41,7 +41,7 @@ jobs:
           target_branch: update/chainjsonv2
       
       - name: Create A PR
-        uses: devops-infra/action-pull-request@v0.4.2
+        uses: devops-infra/action-pull-request@1d8aa3c4a6060a1410641f700f91353af65cc94b # v1.4.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: update/chainjsonv2
