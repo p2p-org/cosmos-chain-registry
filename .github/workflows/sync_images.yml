@@ -12,13 +12,13 @@ jobs:
     steps:
     
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: true
           
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
         with:
           node-version: 19.6.0
           
@@ -27,7 +27,7 @@ jobs:
         run: node sync_images.mjs
       
       - name: Add Commit Push
-        uses: devops-infra/action-commit-push@master
+        uses: devops-infra/action-commit-push@b7477769b20d4ee5ce9a0ed850a2a93f4725aef3 # master
         with:
           github_token: "${{ secrets.GITHUB_TOKEN }}"
           add_timestamp: false
@@ -37,7 +37,7 @@ jobs:
           target_branch: update/images
       
       - name: Create A PR
-        uses: devops-infra/action-pull-request@v0.4.2
+        uses: devops-infra/action-pull-request@3f1cdfa7c7976f6302e820e2b391e846d933693c # v0.4.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: update/images
